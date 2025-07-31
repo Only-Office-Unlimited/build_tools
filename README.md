@@ -1,5 +1,9 @@
 # build_tools
 
+### @@@@@ Unlimit Guid @@@@@ 
+
+- If you made any changes to the repo used in the build process (for example, the server repo), clone it alongside build_tools and then run the build commands.
+
 ## Overview
 
 **build_tools** allow you to automatically get and install all the components
