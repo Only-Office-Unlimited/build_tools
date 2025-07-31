@@ -4,10 +4,12 @@ ENV TZ=Etc/UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get -y update && \
-    apt-get -y install python \
-                       python3 \
+    apt-get -y install python3 \
+                       python3-pip \
+                       python3-venv \
                        sudo
-RUN rm /usr/bin/python && ln -s /usr/bin/python2 /usr/bin/python
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
 ADD . /build_tools
 WORKDIR /build_tools
 
